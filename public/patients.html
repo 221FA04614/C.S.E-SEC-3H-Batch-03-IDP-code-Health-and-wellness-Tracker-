@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Patient</title>
+  <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #151a30;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1f263d;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #292e59;
+    color: white;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: #b0b0b0;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  #responseMessage {
+    color: #ff6b6b;
+    text-align: center;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Add New Patient</h2>
+    <form id="addPatientForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="symptoms">Symptoms:</label>
+      <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <button type="submit">Add Patient</button>
+    </form>
+
+    <p id="responseMessage"></p>
+  </div>
+
+  <script>document.getElementById('addPatientForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    const patientData = {
+      name: document.getElementById('name').value,
+      age: document.getElementById('age').value,
+      gender: document.getElementById('gender').value,
+      symptoms: document.getElementById('symptoms').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value
+    };
+  
+    // Validate form data (basic example)
+    if (patientData.name.trim() === '') {
+      document.getElementById('responseMessage').textContent = 'Please enter a valid name';
+      return;
+    }
+  
+    // Get existing patients from localStorage
+    let patients = JSON.parse(localStorage.getItem('patients')) || [];
+  
+    // Add new patient
+    patients.push(patientData);
+  
+    // Save updated patients list to localStorage
+    localStorage.setItem('patients', JSON.stringify(patients));
+  
+    // Show success message
+    document.getElementById('responseMessage').textContent = 'Patient added successfully!';
+    
+    // Clear form after submission
+    document.getElementById('addPatientForm').reset();
+  });
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #151a30;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: rgb(23, 86, 173);
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo {
+    margin-left: 20px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin-right: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .auth-buttons {
+    margin-right: 20px;
+  }
+  
+  .auth-buttons .btn {
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: white;
+    color: rgb(23, 86, 173);
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .auth-buttons .btn:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .hero {
+    background: url('final\ img.png') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 2.5em;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .cta-button {
+    background-color: white;
+    color: #151a30;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .hero-sec, .tracker-sec {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1f263d;
+  }
+  
+  .hero-sec h1, .tracker-sec h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-sec p, .tracker-sec p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-sec .btn, .tracker-sec .btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #0a1b3e;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .hero-sec .btn:hover, .tracker-sec .btn:hover {
+    background-color: #e1e1e1;
+  }
+  
+  .tracker-sec img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #1a2939;
+  }
+  
+  .feature {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .feature img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .testimonials {
+    background-color: #1e3c5b;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .testimonial {
+    margin-bottom: 20px;
+  }
+  
+  .testimonial p {
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .content form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .content input, .content select, .content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .content button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .content button:hover {
+    background-color: #218838;
+  }
+  
+  .tips ul, .patient-list ul, .record-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .tips li, .patient-list li, .record-list li {
+    background-color: #292e59;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  

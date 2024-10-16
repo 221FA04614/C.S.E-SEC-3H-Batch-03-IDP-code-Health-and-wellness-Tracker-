@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Records</title>
+  <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #151a30;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1f263d;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #292e59;
+  }
+  
+  th {
+    background-color: #374060;
+    color: white;
+    font-weight: bold;
+  }
+  
+  td {
+    color: #b0b0b0;
+  }
+  
+  #noRecordsMessage {
+    text-align: center;
+    color: #ff6b6b;
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    table, th, td {
+      font-size: 0.9em;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Patient Records</h2>
+    <table id="patientTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Symptoms</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Patient records will be dynamically added here -->
+      </tbody>
+    </table>
+    <p id="noRecordsMessage">No patient records available.</p>
+  </div>
+
+  <script>document.addEventListener('DOMContentLoaded', function() {
+    const patients = JSON.parse(localStorage.getItem('patients')) || [];
+    const tableBody = document.querySelector('#patientTable tbody');
+    const noRecordsMessage = document.getElementById('noRecordsMessage');
+  
+    if (patients.length === 0) {
+      noRecordsMessage.style.display = 'block';
+    } else {
+      patients.forEach(patient => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${patient.name}</td>
+          <td>${patient.age}</td>
+          <td>${patient.gender}</td>
+          <td>${patient.symptoms}</td>
+          <td>${patient.email}</td>
+          <td>${patient.phone}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+      noRecordsMessage.style.display = 'none';
+    }
+  });
+  
+  </script>
+</body>
+</html>
